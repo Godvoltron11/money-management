@@ -1,12 +1,9 @@
 import './App.css'
+import type { ComponentType } from 'react'
+import Login from './pages/login';
 
+const LoginComponent = Login as ComponentType
 
-function App() {  return (
-    <div className="App">
-      <h1>Welcome to React with TypeScript!</h1>
-      <p>This is a simple React application using TypeScript.</p>
-    </div>
-  )
+export default function App() {  
+  return <LoginComponent />
 }
-
-export default App
