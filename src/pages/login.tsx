@@ -5,7 +5,7 @@ export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
+    const [error, setError] = useState<string | null>(null);
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
@@ -18,7 +18,7 @@ export default function Login() {
         setLoading(true);
         try {
             // navigate him to a new screen
-        } catch (err) { 
+        } catch (err) {
             setError("Login failed. Please try again.");
         }
         finally {
