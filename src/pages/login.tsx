@@ -29,50 +29,48 @@ export default function Login() {
     
     return (
         <>
-            <header className="login-header">
-                <h1 className="login-header-title">Welcome to Money Management </h1>
-            </header>
             
             <div className="login-container">
-            <form className="login-form" onSubmit={handleSubmit} aria-label="Login Form">
-                <img className="login-logo" src={image} alt="Logo" />
-                <h1 className="login-title">Login</h1>
+                <h1 className="login-header-title">Welcome to Money Management </h1>
+                <form className="login-form" onSubmit={handleSubmit} aria-label="Login Form">
+                    <img className="login-logo" src={image} alt="Logo" />
+                    <h1 className="login-title">Login</h1>
 
-                <label htmlFor="email" className="login-label">Email:
-                    <input
-                        type="email"
-                        id="email"
-                        className="login-input"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </label>
+                    <label htmlFor="email" className="login-label">Email:
+                        <input
+                            type="email"
+                            id="email"
+                            className="login-input"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </label>
 
-                <label htmlFor="password" className="login-label">Password:
-                    <input
-                        type="password"
-                        id="password"
-                        className="login-input"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </label>
+                    <label htmlFor="password" className="login-label">Password:
+                        <input
+                            type="password"
+                            id="password"
+                            className="login-input"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </label>
 
-                <div className="login-actions">
-                    <button type="submit" className="login-button" disabled={loading}>
-                        {loading ? 'Logging in...' : 'Login'}
-                    </button>
-                </div>
+                    <div className="login-actions">
+                        <button type="submit" className="login-button" disabled={loading}>
+                            {loading ? 'Logging in...' : 'Login'}
+                        </button>
+                    </div>
 
-                <div className="login-footer">
-                    <p className="login-error" role="alert">{error}</p>
-                    <p>Don't have an account? <a href="/signup">Sign up</a></p>
-                    <p><a href="/forgot-password">Forgot password?</a></p>
-                </div>
+                    <div className="login-footer">
+                        <p className="login-error" role="alert">{error}</p>
+                        <p>Don't have an account? <a href="/signup">Sign up</a></p>
+                        <p><a href="/forgot-password">Forgot password?</a></p>
+                    </div>
 
-            </form>
+                </form>
         </div>
         </>
     );

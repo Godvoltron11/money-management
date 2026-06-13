@@ -11,10 +11,10 @@
     
 }
 
-.login-header {
+/* .login-header {
     padding: 1rem;
     text-align: center;
-}
+} */
 
 
 
@@ -38,6 +38,12 @@
 .login-title {
     margin: 0 0 0.5rem;
     font-size: 2rem;
+    color: #0f172a;
+}
+
+.login-header-title {
+    margin: 100px;
+    font-size: 2.5rem;
     color: #0f172a;
 }
 
