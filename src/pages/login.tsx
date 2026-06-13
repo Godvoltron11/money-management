@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "../../src/pages/login.css";
+import image from "../../public/image1.png";
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -27,8 +28,14 @@ export default function Login() {
     }
     
     return (
-        <div className="login-container">
+        <>
+            <header className="login-header">
+                <h1 className="login-header-title">Welcome to Money Management </h1>
+            </header>
+            
+            <div className="login-container">
             <form className="login-form" onSubmit={handleSubmit} aria-label="Login Form">
+                <img className="login-logo" src={image} alt="Logo" />
                 <h1 className="login-title">Login</h1>
 
                 <label htmlFor="email" className="login-label">Email:
@@ -61,10 +68,12 @@ export default function Login() {
 
                 <div className="login-footer">
                     <p className="login-error" role="alert">{error}</p>
-                    <p>This is the footer content for the login form.</p>
+                    <p>Don't have an account? <a href="/signup">Sign up</a></p>
+                    <p><a href="/forgot-password">Forgot password?</a></p>
                 </div>
 
             </form>
         </div>
-    )
+        </>
+    );
 }
