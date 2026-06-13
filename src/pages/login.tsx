@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import "../../src/pages/login.css";
 import image from "../../public/image1.png";
 
-export default function Login() {
+type LoginProps = {
+  onLogin: () => void;
+};
+
+export default function Login({ onLogin }: LoginProps) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -20,8 +24,8 @@ export default function Login() {
     setLoading(true);
 
     try {
-      // navigate him to a new screen
-    } catch (err) {
+      onLogin();
+    } catch {
       setError("Login failed. Please try again.");
     } finally {
       setLoading(false);

@@ -1,9 +1,14 @@
-import './App.css'
-import type { ComponentType } from 'react'
-import Login from './pages/login';
+import "./App.css";
+import { useState } from "react";
+import Login from "./pages/login";
+import Dashboard from "./pages/dashboard";
 
-const LoginComponent = Login as ComponentType
+export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-export default function App() {  
-  return <LoginComponent />
+  if (isLoggedIn) {
+    return <Dashboard onLogout={() => setIsLoggedIn(false)} />;
+  }
+
+  return <Login onLogin={() => setIsLoggedIn(true)} />;
 }
