@@ -9,6 +9,40 @@ export default function Dashboard({ onLogout }: DashboardProps) {
   
   return (
     <div className="dashboard-page">
+      <nav className="dashboard-navbar">
+        <div className="dashboard-navbar-brand">
+          <span className="dashboard-navbar-logo">MM</span>
+        </div>
+        <div>
+          <h2>Money Manager</h2>
+          <p>Track your finances clearly!</p>
+        </div>
+      
+
+      <div className="dashboard-navbar-links">
+        <button type="button" className="dashboard-navbar-link">
+          Overview
+        </button>
+        <button type="button" className="dashboard-navbar-link">
+          Budgets
+        </button>
+        <button type="button" className="dashboard-navbar-link">
+          Expenses
+        </button>
+        <button type="button" className="dashboard-navbar-link">
+          Settings
+        </button>
+      </div>
+
+      <button 
+        className="dashboard-navbar-logout"
+        type="button"
+        onClick={onLogout}
+      >
+        Log out
+      </button>
+    </nav>
+
       <div className="dashboard-card">
         <p className="dashboard-eyebrow">Dashboard</p>
         <h1>Welcome to your money management dashboard</h1>
