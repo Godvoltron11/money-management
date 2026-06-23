@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import "../../src/pages/login.css";
 import image from "../../public/image1.png";
+import { useNavigate } from "react-router-dom";
 
-type LoginProps = {
-  onLogin: () => void;
-};
 
-export default function Login({ onLogin }: LoginProps) {
+export default function Login() {
+  const navigate = useNavigate(); 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -24,7 +23,9 @@ export default function Login({ onLogin }: LoginProps) {
     setLoading(true);
 
     try {
-      onLogin();
+      // Simulate a login API call
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      navigate('/dashboard');
     } catch {
       setError("Login failed. Please try again.");
     } finally {

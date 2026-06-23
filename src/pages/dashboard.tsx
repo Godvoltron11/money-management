@@ -12,6 +12,8 @@ const budgetItems = [
   { label: "Savings", spent: "$1,100", limit: "$1,500", width: "73%" },
 ];
 
+
+
 export default function Dashboard() {
   return (
     <div className="dashboard-page">

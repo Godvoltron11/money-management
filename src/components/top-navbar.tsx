@@ -1,10 +1,13 @@
 import "./top-navbar.css";
+import { useNavigate } from "react-router-dom";
 
 type TopNavbarProps = {
   onLogout: () => void;
 };
 
 export default function TopNavbar({ onLogout }: TopNavbarProps) {
+  const navigate = useNavigate();
+
   return (
     <header className="top-navbar">
       <div className="top-navbar__brand">
@@ -16,16 +19,16 @@ export default function TopNavbar({ onLogout }: TopNavbarProps) {
       </div>
 
       <nav className="top-navbar__nav" aria-label="Primary">
-        <button type="button" className="top-navbar__link top-navbar__link--active">
+        <button type="button" className="top-navbar__link top-navbar__link--active" onClick={() => navigate('/dashboard')}>
           Overview
         </button>
-        <button type="button" className="top-navbar__link">
+        <button type="button" className="top-navbar__link" onClick={() => navigate('/budgets')}>
           Budgets
         </button>
-        <button type="button" className="top-navbar__link">
+        <button type="button" className="top-navbar__link" onClick={() => navigate('/transactions')}>
           Transactions
         </button>
-        <button type="button" className="top-navbar__link">
+        <button type="button" className="top-navbar__link" onClick={() => navigate('/reports')}>
           Reports
         </button>
       </nav>

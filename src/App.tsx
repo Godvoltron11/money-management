@@ -1,19 +1,29 @@
 import "./App.css";
-import { useState } from "react";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
 import AppShell from "./components/app-shell";
+import Budgets from "./pages/budgets";
+
+function Shell() {
+  const navigate = useNavigate();
+  return (
+    <AppShell onLogout={() => navigate('/')}>
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/budgets" element={<Budgets />} />
+      </Routes>
+    </AppShell>
+  );
+}
 
 export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  if (isLoggedIn) {
-    return (
-      <AppShell onLogout={() => setIsLoggedIn(false)}>
-        <Dashboard />
-      </AppShell>
-    );
-  }
-
-  return <Login onLogin={() => setIsLoggedIn(true)} />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/*" element={<Shell />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
