@@ -1,5 +1,5 @@
 import "./top-navbar.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 type TopNavbarProps = {
   onLogout: () => void;
@@ -7,6 +7,9 @@ type TopNavbarProps = {
 
 export default function TopNavbar({ onLogout }: TopNavbarProps) {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isActive = (path: string) =>
+    location.pathname === path || location.pathname.startsWith(`${path}/`);
 
   return (
     <header className="top-navbar">
@@ -19,16 +22,32 @@ export default function TopNavbar({ onLogout }: TopNavbarProps) {
       </div>
 
       <nav className="top-navbar__nav" aria-label="Primary">
-        <button type="button" className="top-navbar__link top-navbar__link--active" onClick={() => navigate('/dashboard')}>
+        <button
+          type="button"
+          className={`top-navbar__link ${isActive("/dashboard") ? "top-navbar__link--active" : ""}`}
+          onClick={() => navigate("/dashboard")}
+        >
           Overview
         </button>
-        <button type="button" className="top-navbar__link" onClick={() => navigate('/budgets')}>
+        <button
+          type="button"
+          className={`top-navbar__link ${isActive("/budgets") ? "top-navbar__link--active" : ""}`}
+          onClick={() => navigate("/budgets")}
+        >
           Budgets
         </button>
-        <button type="button" className="top-navbar__link" onClick={() => navigate('/transactions')}>
+        <button
+          type="button"
+          className={`top-navbar__link ${isActive("/transactions") ? "top-navbar__link--active" : ""}`}
+          onClick={() => navigate("/transactions")}
+        >
           Transactions
         </button>
-        <button type="button" className="top-navbar__link" onClick={() => navigate('/reports')}>
+        <button
+          type="button"
+          className={`top-navbar__link ${isActive("/reports") ? "top-navbar__link--active" : ""}`}
+          onClick={() => navigate("/reports")}
+        >
           Reports
         </button>
       </nav>

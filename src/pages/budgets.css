@@ -2,3 +2,42 @@
     padding: 20px;
     color:rgb(255, 255, 255);
 }
+
+.budgets-stats {
+     display: grid;
+     grid-template-columns: repeat(4, minmax(0, 1fr));
+     gap: 1rem;
+    color: rgb(255, 255, 255);
+}
+
+.budgets-stat {
+    padding: 1.14rem;
+    background-color: rgb(20, 46, 65);
+    gap: 1rem;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+    border-radius: 22px;
+}
+
+.budgets-stat span {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: rgb(255, 255, 255);
+}
+
+.budgets-stat p {
+    margin: 0.75rem 0 0;
+    color: rgb(255, 255, 255);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.budgets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.budgets-stat strong {
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+}
