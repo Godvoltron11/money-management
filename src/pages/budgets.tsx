@@ -1,8 +1,9 @@
+import "./budgets.css";
 export default function Budgets() {
   return (
-    <div className="budgets">
-      <h1>Budgets</h1>
-      <p>Your budget page content goes here.</p>
+    <div className="budgets-page">
+      <h1 className="budgets-title">Budgets</h1>
+      <p></p>
     </div>
   );
 }
